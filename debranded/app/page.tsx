@@ -95,8 +95,8 @@ const SOCIAL_LINKS = [
   },
   {
     name: "WhatsApp",
-    handle: "DEBRANDED",
-    href: "https://wa.me/message/debranded",
+    handle: "+234 912 149 5179",
+    href: "https://wa.me/2349121495179",
     color: "#25D366",
     icon: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
@@ -117,14 +117,6 @@ const SOCIAL_LINKS = [
   },
 ];
 
-// ─── Sparkle positions (deterministic) ──────────────────────────────────────
-const SPARKLES = Array.from({ length: 16 }, (_, i) => ({
-  left:     `${(i * 6.7 + 2.1) % 95}%`,
-  top:      `${(i * 11.3 + 4.7) % 90}%`,
-  delay:    `${(i * 0.55) % 5}s`,
-  duration: `${2.8 + (i % 5) * 0.6}s`,
-  size:     i % 3 === 0 ? "3px" : "2px",
-}));
 
 // ─── Countdown Tile ──────────────────────────────────────────────────────────
 function CountdownTile({ value, label, delay }: { value: number; label: string; delay: string }) {
@@ -139,7 +131,7 @@ function CountdownTile({ value, label, delay }: { value: number; label: string; 
           {pad(value)}
         </span>
       </div>
-      <span className="mt-1.5 text-[9px] lg:text-[10px] font-bold tracking-[0.28em] uppercase text-white/50">
+      <span className="mt-1.5 text-[9px] lg:text-[10px] font-bold tracking-[0.28em] uppercase text-white/65">
         {label}
       </span>
     </div>
@@ -191,164 +183,136 @@ export default function ComingSoonPage() {
 
   return (
     <div
-      className="relative w-full overflow-hidden flex flex-col"
+      className="w-full flex flex-col"
       style={{ background: "#06060e", minHeight: "100vh" }}
     >
-      {/* Scan line */}
-      <div className="scan-line" />
-
-      {/* Background grid */}
-      <div className="grid-bg absolute inset-0 pointer-events-none" />
-
-      {/* Sparkles */}
-      {SPARKLES.map((s, i) => (
-        <div key={i} className="sparkle" style={{ left: s.left, top: s.top, width: s.size, height: s.size, animationDelay: s.delay, animationDuration: s.duration }} />
-      ))}
-
-      {/* Ambient blobs */}
-      <div className="blob animate-blob" style={{ width: "640px", height: "640px", background: "rgba(0,212,255,0.08)",   top: "-18%", left: "-12%",  animationDelay: "0s",  animationDuration: "12s" }} />
-      <div className="blob animate-blob" style={{ width: "520px", height: "520px", background: "rgba(139,92,246,0.10)", top: "28%",  right: "-14%", animationDelay: "4s",  animationDuration: "10s" }} />
-      <div className="blob animate-blob" style={{ width: "420px", height: "420px", background: "rgba(236,72,153,0.07)", bottom: "4%", left: "28%",  animationDelay: "8s",  animationDuration: "14s" }} />
-      <div className="blob animate-blob" style={{ width: "280px", height: "280px", background: "rgba(255,255,255,0.025)", top: "55%", left: "10%",  animationDelay: "2s",  animationDuration: "9s" }} />
-
-      {/* ── MAIN ─────────────────────────────────────────────────────────── */}
-      <main className="relative z-10 flex flex-col w-full max-w-7xl mx-auto px-6 lg:px-14 pt-8 lg:pt-10 pb-6 flex-1">
+      {/* ── MAIN ────────────────────────────────────────────────────── */}
+      <main className="flex flex-col items-center w-full max-w-2xl mx-auto px-6 pt-10 pb-8 flex-1 gap-10">
 
         {/* LOGO HEADER */}
-        <header className="flex flex-col items-center mb-8 lg:mb-10">
-          <div className="flex flex-col items-center gap-4 mb-2">
-            <div
-              className="relative rounded-2xl overflow-hidden flex-shrink-0"
-              style={{
-                width: "96px",
-                height: "96px",
-                border: "2px solid rgba(255,255,255,0.40)",
-                boxShadow: "0 0 0 1px rgba(255,255,255,0.10), 0 0 40px rgba(255,255,255,0.18), 0 0 80px rgba(255,255,255,0.06), 0 12px 40px rgba(0,0,0,0.70)",
-              }}
-            >
-              <Image
-                src="/logo-mark.png"
-                alt="DEBRANDED logo"
-                width={96}
-                height={96}
-                className="object-cover w-full h-full"
-                priority
-              />
-            </div>
-            <h1
-              className="text-3xl lg:text-4xl font-black tracking-[0.22em] text-white text-center animate-glow-white"
-              style={{ textShadow: "0 0 28px rgba(255,255,255,0.50), 0 0 64px rgba(255,255,255,0.18)" }}
-            >
-              DEBRANDED
-            </h1>
+        <header className="flex flex-col items-center gap-3">
+          <div
+            className="relative rounded-2xl overflow-hidden shrink-0"
+            style={{
+              width: "96px",
+              height: "96px",
+              border: "2px solid rgba(255,255,255,0.40)",
+              boxShadow: "0 0 0 1px rgba(255,255,255,0.10), 0 0 40px rgba(255,255,255,0.18), 0 0 80px rgba(255,255,255,0.06), 0 12px 40px rgba(0,0,0,0.70)",
+            }}
+          >
+            <Image
+              src="/logo-mark.png"
+              alt="DEBRANDED logo"
+              width={96}
+              height={96}
+              className="object-cover w-full h-full"
+              priority
+            />
           </div>
-          <p className="text-[10px] font-bold tracking-[0.38em] uppercase text-white/50 text-center">
+          <h1
+            className="text-3xl lg:text-4xl font-black tracking-[0.22em] text-white text-center animate-glow-white"
+            style={{ textShadow: "0 0 28px rgba(255,255,255,0.50), 0 0 64px rgba(255,255,255,0.18)" }}
+          >
+            DEBRANDED
+          </h1>
+          <p className="text-[10px] font-bold tracking-[0.38em] uppercase text-white/65 text-center">
             Tech Growth Architects
           </p>
         </header>
 
-        {/* TWO-COLUMN GRID */}
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 w-full items-center flex-1">
+        {/* COMING SOON */}
+        <section className="flex flex-col items-center w-full">
+          <h2
+            className="font-black uppercase leading-[0.88] tracking-tight text-center animate-fade-up delay-100"
+            style={{ fontSize: "clamp(4.5rem, 20vw, 10rem)" }}
+          >
+            <span className="text-gradient block">COMING</span>
+            <span className="text-stroke-white block mt-1">SOON</span>
+          </h2>
+          <p className="mt-6 max-w-md text-sm lg:text-[15px] text-white/85 leading-[1.7] animate-fade-up delay-200 text-center">
+            We are putting the finishing touches on something that will completely{" "}
+            <span className="text-white font-semibold">redefine</span> how tech
+            products grow.{" "}
+            <span className="text-white">The wait is almost over.</span>
+          </p>
+        </section>
 
-          {/* LEFT — COMING SOON + tagline */}
-          <div className="flex flex-col">
-            <h2
-              className="font-black uppercase leading-[0.88] tracking-tight animate-fade-up delay-100"
-              style={{ fontSize: "clamp(3.5rem, 8vw, 7.5rem)" }}
-            >
-              <span className="text-gradient block">COMING</span>
-              <span className="text-stroke-white block mt-1">SOON</span>
-            </h2>
-            <p className="mt-6 max-w-sm text-sm lg:text-[15px] text-white/65 leading-[1.7] animate-fade-up delay-200">
-              We are putting the finishing touches on something that will completely{" "}
-              <span className="text-white font-semibold">redefine</span> how tech
-              products grow.{" "}
-              <span className="text-white/80">The wait is almost over.</span>
-            </p>
+        {/* COUNTDOWN */}
+        <section className="w-full animate-fade-up delay-300">
+          <p className="text-[10px] font-bold tracking-[0.32em] uppercase text-white/65 mb-4 text-center">
+            LAUNCHING IN
+          </p>
+          <div className="flex items-stretch gap-2.5 w-full">
+            <CountdownTile value={timeLeft.days}    label="Days"    delay="delay-400" />
+            <div className="flex items-center font-black text-2xl select-none self-center text-white/30">:</div>
+            <CountdownTile value={timeLeft.hours}   label="Hours"   delay="delay-500" />
+            <div className="flex items-center font-black text-2xl select-none self-center text-white/30">:</div>
+            <CountdownTile value={timeLeft.minutes} label="Minutes" delay="delay-600" />
+            <div className="flex items-center font-black text-2xl select-none self-center text-white/30">:</div>
+            <CountdownTile value={timeLeft.seconds} label="Seconds" delay="delay-700" />
           </div>
+        </section>
 
-          {/* RIGHT — Countdown + Progress + Social */}
-          <div className="flex flex-col gap-6">
-
-            {/* COUNTDOWN */}
-            <div>
-              <p className="text-[10px] font-bold tracking-[0.32em] uppercase text-white/45 mb-3 animate-fade-up delay-300">
-                LAUNCHING IN
-              </p>
-              <div className="flex items-stretch gap-2.5 w-full">
-                <CountdownTile value={timeLeft.days}    label="Days"    delay="delay-400" />
-                <div className="flex items-center font-black text-2xl select-none self-center text-white/15">:</div>
-                <CountdownTile value={timeLeft.hours}   label="Hours"   delay="delay-500" />
-                <div className="flex items-center font-black text-2xl select-none self-center text-white/15">:</div>
-                <CountdownTile value={timeLeft.minutes} label="Minutes" delay="delay-600" />
-                <div className="flex items-center font-black text-2xl select-none self-center text-white/15">:</div>
-                <CountdownTile value={timeLeft.seconds} label="Seconds" delay="delay-700" />
+        {/* LAUNCH PROGRESS */}
+        <section className="glass-card p-5 w-full animate-fade-up delay-700">
+          <div className="flex items-center justify-between mb-4">
+            <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-white/75">
+              Launch Readiness
+            </span>
+            <span className="text-sm font-black text-white">{OVERALL_PCT}%</span>
+          </div>
+          <ProgressBar pct={OVERALL_PCT} delay="delay-800" />
+          <div className="mt-5 space-y-4">
+            {PROGRESS_ITEMS.map((item, i) => (
+              <div key={item.label}>
+                <div className="flex items-center justify-between mb-1.5">
+                  <span className="text-[11px] text-white/75">{item.label}</span>
+                  <span className="text-[11px] font-bold text-white">{item.pct}%</span>
+                </div>
+                <ProgressBar pct={item.pct} delay={`delay-${800 + i * 100}`} />
               </div>
-            </div>
+            ))}
+          </div>
+        </section>
 
-            {/* LAUNCH PROGRESS */}
-            <div className="glass-card p-5 animate-fade-up delay-700">
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-white/55">
-                  Launch Readiness
+        {/* SOCIAL HANDLES */}
+        <section className="w-full animate-fade-up delay-1000">
+          <p className="text-[10px] font-bold tracking-[0.32em] uppercase text-white/65 mb-4 text-center">
+            JOIN THE MOVEMENT
+          </p>
+          <div className="flex flex-wrap gap-2 justify-center">
+            {SOCIAL_LINKS.map((social) => (
+              <a
+                key={social.name}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={`${social.name} — ${social.handle}`}
+                className="group social-pill glass-card flex items-center gap-2 px-3 py-2
+                  transition-all duration-300 hover:scale-105 hover:border-white/20"
+                style={{ borderRadius: "100px" }}
+              >
+                <span
+                  className="transition-all duration-300 text-white/60 group-hover:scale-110"
+                  onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = social.color)}
+                  onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "")}
+                >
+                  {social.icon}
                 </span>
-                <span className="text-sm font-black text-white">{OVERALL_PCT}%</span>
-              </div>
-              <ProgressBar pct={OVERALL_PCT} delay="delay-800" />
-              <div className="mt-4 space-y-3">
-                {PROGRESS_ITEMS.map((item, i) => (
-                  <div key={item.label}>
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="text-[10px] text-white/55">{item.label}</span>
-                      <span className="text-[10px] font-bold text-white">{item.pct}%</span>
-                    </div>
-                    <ProgressBar pct={item.pct} delay={`delay-${800 + i * 100}`} />
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* SOCIAL HANDLES */}
-            <div className="animate-fade-up delay-1000">
-              <p className="text-[10px] font-bold tracking-[0.32em] uppercase text-white/45 mb-3">
-                JOIN THE MOVEMENT
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {SOCIAL_LINKS.map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title={`${social.name} — ${social.handle}`}
-                    className="group social-pill glass-card flex items-center gap-2 px-3 py-2
-                      transition-all duration-300 hover:scale-105 hover:border-white/20"
-                    style={{ borderRadius: "100px" }}
-                  >
-                    <span
-                      className="transition-all duration-300 text-white/35 group-hover:scale-110"
-                      onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = social.color)}
-                      onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "")}
-                    >
-                      {social.icon}
-                    </span>
-                    <span className="text-[11px] font-semibold text-white/55 group-hover:text-white transition-colors duration-300">
-                      {social.handle}
-                    </span>
-                  </a>
-                ))}
-              </div>
-            </div>
-
+                <span className="text-[11px] font-semibold text-white/75 group-hover:text-white transition-colors duration-300">
+                  {social.handle}
+                </span>
+              </a>
+            ))}
           </div>
-        </div>
+        </section>
       </main>
 
       {/* FOOTER */}
-      <footer className="relative z-10 border-t border-white/5 py-4">
-        <p className="text-center text-[10px] text-white/20 tracking-widest uppercase">
+      <footer className="border-t border-white/10 py-5">
+        <p className="text-center text-[10px] text-white/40 tracking-widest uppercase">
           © 2026 DEBRANDED · All rights reserved · Built by{" "}
-          <span className="text-white/35">Kingsley Maduabuchi</span>
+          <span className="text-white/60">Kingsley Maduabuchi</span>
         </p>
       </footer>
     </div>
