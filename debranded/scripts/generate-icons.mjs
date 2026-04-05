@@ -14,8 +14,8 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const INPUT  = path.resolve(__dirname, "../../logo.jpg");      // DEBRANDED/logo.jpg
-const PUBLIC = path.resolve(__dirname, "../public");            // debranded/public/
+const INPUT = path.resolve(__dirname, "../../logo.jpg"); // DEBRANDED/logo.jpg
+const PUBLIC = path.resolve(__dirname, "../public"); // debranded/public/
 
 async function main() {
   const { width, height } = await sharp(INPUT).metadata();
@@ -24,15 +24,15 @@ async function main() {
   // ── D-mark crop region ──────────────────────────────────────────────────
   // The logo.jpg has the D mark in the upper ~55% of the image,
   // centred horizontally. We extract a square from that area.
-  const cropH    = Math.floor(height * 0.50);          // height of the mark zone (D only)
-  const cropSize = Math.min(width, cropH);              // square side
+  const cropH = Math.floor(height * 0.5); // height of the mark zone (D only)
+  const cropSize = Math.min(width, cropH); // square side
   const cropLeft = Math.floor((width - cropSize) / 2); // centred
-  const cropTop  = Math.floor(height  * 0.10);          // 10% from top (avoid padding)
+  const cropTop = Math.floor(height * 0.1); // 10% from top (avoid padding)
 
   const markRegion = {
-    left:   Math.max(0, cropLeft),
-    top:    Math.max(0, cropTop),
-    width:  cropSize,
+    left: Math.max(0, cropLeft),
+    top: Math.max(0, cropTop),
+    width: cropSize,
     height: Math.min(cropSize, height - cropTop),
   };
 

@@ -16,10 +16,10 @@ interface TimeLeft {
 function msToTimeLeft(ms: number): TimeLeft {
   if (ms <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
   return {
-    days:    Math.floor(ms / 86_400_000),
-    hours:   Math.floor((ms % 86_400_000) / 3_600_000),
-    minutes: Math.floor((ms % 3_600_000)  / 60_000),
-    seconds: Math.floor((ms % 60_000)     / 1_000),
+    days: Math.floor(ms / 86_400_000),
+    hours: Math.floor((ms % 86_400_000) / 3_600_000),
+    minutes: Math.floor((ms % 3_600_000) / 60_000),
+    seconds: Math.floor((ms % 60_000) / 1_000),
   };
 }
 
@@ -36,12 +36,12 @@ const pad = (n: number) => String(n).padStart(2, "0");
 
 // ─── Progress Items ──────────────────────────────────────────────────────────
 const PROGRESS_ITEMS = [
-  { label: "Platform Infrastructure",     pct: 85 },
-  { label: "Brand Architecture",          pct: 93 },
-  { label: "Growth Engine (Antigravity)", pct: 68 },
+  { label: "Platform Infrastructure", pct: 85 },
+  { label: "Brand Architecture", pct: 93 },
+  { label: "Growth Engine", pct: 68 },
 ];
 const OVERALL_PCT = Math.round(
-  PROGRESS_ITEMS.reduce((s, i) => s + i.pct, 0) / PROGRESS_ITEMS.length
+  PROGRESS_ITEMS.reduce((s, i) => s + i.pct, 0) / PROGRESS_ITEMS.length,
 );
 
 // ─── Social Links ────────────────────────────────────────────────────────────
@@ -52,8 +52,15 @@ const SOCIAL_LINKS = [
     href: "https://instagram.com/scalewithdebranded",
     color: "#E1306C",
     icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"
-        strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="w-4 h-4"
+      >
         <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
         <circle cx="12" cy="12" r="4" />
         <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
@@ -117,16 +124,31 @@ const SOCIAL_LINKS = [
   },
 ];
 
-
 // ─── Countdown Tile ──────────────────────────────────────────────────────────
-function CountdownTile({ value, label, delay }: { value: number; label: string; delay: string }) {
+function CountdownTile({
+  value,
+  label,
+  delay,
+}: {
+  value: number;
+  label: string;
+  delay: string;
+}) {
   return (
-    <div className={`glass-card animate-fade-up ${delay} flex flex-col items-center justify-center px-3 py-4 lg:px-5 lg:py-5 flex-1 min-w-0`}>
-      <div className="overflow-hidden h-12 lg:h-16 flex items-center justify-center" style={{ perspective: "600px" }}>
+    <div
+      className={`glass-card animate-fade-up ${delay} flex flex-col items-center justify-center px-3 py-4 lg:px-5 lg:py-5 flex-1 min-w-0`}
+    >
+      <div
+        className="overflow-hidden h-12 lg:h-16 flex items-center justify-center"
+        style={{ perspective: "600px" }}
+      >
         <span
           key={value}
           className="animate-flip-in block font-black text-4xl lg:text-5xl leading-none tracking-tight text-white tabular-nums"
-          style={{ textShadow: "0 0 30px rgba(255,255,255,0.30), 0 0 60px rgba(0,212,255,0.15)" }}
+          style={{
+            textShadow:
+              "0 0 30px rgba(255,255,255,0.30), 0 0 60px rgba(0,212,255,0.15)",
+          }}
         >
           {pad(value)}
         </span>
@@ -157,7 +179,12 @@ function ProgressBar({ pct, delay }: { pct: number; delay: string }) {
 
 // ─── Page ────────────────────────────────────────────────────────────────────
 export default function ComingSoonPage() {
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>({ days: 10, hours: 0, minutes: 0, seconds: 0 });
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>({
+    days: 10,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
   const [mounted, setMounted] = useState(false);
   const targetRef = useRef(0);
 
@@ -188,7 +215,6 @@ export default function ComingSoonPage() {
     >
       {/* ── MAIN ────────────────────────────────────────────────────── */}
       <main className="flex flex-col items-center w-full max-w-2xl mx-auto px-6 pt-10 pb-8 flex-1 gap-10">
-
         {/* LOGO HEADER */}
         <header className="flex flex-col items-center gap-3">
           <div
@@ -197,7 +223,8 @@ export default function ComingSoonPage() {
               width: "96px",
               height: "96px",
               border: "2px solid rgba(255,255,255,0.40)",
-              boxShadow: "0 0 0 1px rgba(255,255,255,0.10), 0 0 40px rgba(255,255,255,0.18), 0 0 80px rgba(255,255,255,0.06), 0 12px 40px rgba(0,0,0,0.70)",
+              boxShadow:
+                "0 0 0 1px rgba(255,255,255,0.10), 0 0 40px rgba(255,255,255,0.18), 0 0 80px rgba(255,255,255,0.06), 0 12px 40px rgba(0,0,0,0.70)",
             }}
           >
             <Image
@@ -211,12 +238,15 @@ export default function ComingSoonPage() {
           </div>
           <h1
             className="text-3xl lg:text-4xl font-black tracking-[0.22em] text-white text-center animate-glow-white"
-            style={{ textShadow: "0 0 28px rgba(255,255,255,0.50), 0 0 64px rgba(255,255,255,0.18)" }}
+            style={{
+              textShadow:
+                "0 0 28px rgba(255,255,255,0.50), 0 0 64px rgba(255,255,255,0.18)",
+            }}
           >
             DEBRANDED
           </h1>
           <p className="text-[10px] font-bold tracking-[0.38em] uppercase text-white/65 text-center">
-            Tech Growth Architects
+            Tech Growth Engine
           </p>
         </header>
 
@@ -230,7 +260,8 @@ export default function ComingSoonPage() {
             <span className="text-stroke-white block mt-1">SOON</span>
           </h2>
           <p className="mt-6 max-w-md text-sm lg:text-[15px] text-white/85 leading-[1.7] animate-fade-up delay-200 text-center">
-            We are putting the finishing touches on something that will completely{" "}
+            We are putting the finishing touches on something that will
+            completely{" "}
             <span className="text-white font-semibold">redefine</span> how tech
             products grow.{" "}
             <span className="text-white">The wait is almost over.</span>
@@ -243,13 +274,35 @@ export default function ComingSoonPage() {
             LAUNCHING IN
           </p>
           <div className="flex items-stretch gap-2.5 w-full">
-            <CountdownTile value={timeLeft.days}    label="Days"    delay="delay-400" />
-            <div className="flex items-center font-black text-2xl select-none self-center text-white/30">:</div>
-            <CountdownTile value={timeLeft.hours}   label="Hours"   delay="delay-500" />
-            <div className="flex items-center font-black text-2xl select-none self-center text-white/30">:</div>
-            <CountdownTile value={timeLeft.minutes} label="Minutes" delay="delay-600" />
-            <div className="flex items-center font-black text-2xl select-none self-center text-white/30">:</div>
-            <CountdownTile value={timeLeft.seconds} label="Seconds" delay="delay-700" />
+            <CountdownTile
+              value={timeLeft.days}
+              label="Days"
+              delay="delay-400"
+            />
+            <div className="flex items-center font-black text-2xl select-none self-center text-white/30">
+              :
+            </div>
+            <CountdownTile
+              value={timeLeft.hours}
+              label="Hours"
+              delay="delay-500"
+            />
+            <div className="flex items-center font-black text-2xl select-none self-center text-white/30">
+              :
+            </div>
+            <CountdownTile
+              value={timeLeft.minutes}
+              label="Minutes"
+              delay="delay-600"
+            />
+            <div className="flex items-center font-black text-2xl select-none self-center text-white/30">
+              :
+            </div>
+            <CountdownTile
+              value={timeLeft.seconds}
+              label="Seconds"
+              delay="delay-700"
+            />
           </div>
         </section>
 
@@ -259,15 +312,21 @@ export default function ComingSoonPage() {
             <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-white/75">
               Launch Readiness
             </span>
-            <span className="text-sm font-black text-white">{OVERALL_PCT}%</span>
+            <span className="text-sm font-black text-white">
+              {OVERALL_PCT}%
+            </span>
           </div>
           <ProgressBar pct={OVERALL_PCT} delay="delay-800" />
           <div className="mt-5 space-y-4">
             {PROGRESS_ITEMS.map((item, i) => (
               <div key={item.label}>
                 <div className="flex items-center justify-between mb-1.5">
-                  <span className="text-[11px] text-white/75">{item.label}</span>
-                  <span className="text-[11px] font-bold text-white">{item.pct}%</span>
+                  <span className="text-[11px] text-white/75">
+                    {item.label}
+                  </span>
+                  <span className="text-[11px] font-bold text-white">
+                    {item.pct}%
+                  </span>
                 </div>
                 <ProgressBar pct={item.pct} delay={`delay-${800 + i * 100}`} />
               </div>
@@ -294,8 +353,13 @@ export default function ComingSoonPage() {
               >
                 <span
                   className="transition-all duration-300 text-white/60 group-hover:scale-110"
-                  onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = social.color)}
-                  onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "")}
+                  onMouseEnter={(e) =>
+                    ((e.currentTarget as HTMLElement).style.color =
+                      social.color)
+                  }
+                  onMouseLeave={(e) =>
+                    ((e.currentTarget as HTMLElement).style.color = "")
+                  }
                 >
                   {social.icon}
                 </span>

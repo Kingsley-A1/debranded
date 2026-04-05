@@ -41,17 +41,17 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "DEBRANDED — Coming Soon",
-    description:
-      "Elite tech marketing & growth architecture. Launching soon.",
+    description: "Elite tech marketing & growth architecture. Launching soon.",
     type: "website",
     locale: "en_US",
-    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "DEBRANDED" }],
+    images: [
+      { url: "/og-image.jpg", width: 1200, height: 630, alt: "DEBRANDED" },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "DEBRANDED — Coming Soon",
-    description:
-      "Elite tech marketing & growth architecture. Launching soon.",
+    description: "Elite tech marketing & growth architecture. Launching soon.",
     images: ["/og-image.jpg"],
   },
 };
