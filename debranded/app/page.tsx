@@ -215,32 +215,34 @@ export default function ComingSoonPage() {
       <main className="relative z-10 flex flex-col w-full max-w-7xl mx-auto px-6 lg:px-14 pt-8 lg:pt-10 pb-6 flex-1">
 
         {/* LOGO HEADER */}
-        <header className="flex flex-col items-center mb-8 lg:mb-10 animate-scale-in">
-          <div className="flex items-center gap-4 mb-2">
+        <header className="flex flex-col items-center mb-8 lg:mb-10">
+          <div className="flex flex-col items-center gap-4 mb-2">
             <div
-              className="relative w-14 h-14 rounded-2xl overflow-hidden flex-shrink-0"
+              className="relative rounded-2xl overflow-hidden flex-shrink-0"
               style={{
-                border: "1.5px solid rgba(255,255,255,0.30)",
-                boxShadow: "0 0 0 1px rgba(255,255,255,0.06), 0 0 24px rgba(255,255,255,0.12), 0 8px 28px rgba(0,0,0,0.65)",
+                width: "96px",
+                height: "96px",
+                border: "2px solid rgba(255,255,255,0.40)",
+                boxShadow: "0 0 0 1px rgba(255,255,255,0.10), 0 0 40px rgba(255,255,255,0.18), 0 0 80px rgba(255,255,255,0.06), 0 12px 40px rgba(0,0,0,0.70)",
               }}
             >
               <Image
                 src="/logo-mark.png"
                 alt="DEBRANDED logo"
-                width={56}
-                height={56}
+                width={96}
+                height={96}
                 className="object-cover w-full h-full"
                 priority
               />
             </div>
             <h1
-              className="text-3xl lg:text-4xl font-black tracking-[0.22em] text-white"
+              className="text-3xl lg:text-4xl font-black tracking-[0.22em] text-white text-center animate-glow-white"
               style={{ textShadow: "0 0 28px rgba(255,255,255,0.50), 0 0 64px rgba(255,255,255,0.18)" }}
             >
               DEBRANDED
             </h1>
           </div>
-          <p className="text-[10px] font-bold tracking-[0.38em] uppercase text-white/50">
+          <p className="text-[10px] font-bold tracking-[0.38em] uppercase text-white/50 text-center">
             Tech Growth Architects
           </p>
         </header>
