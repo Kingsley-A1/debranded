@@ -218,21 +218,20 @@ export default function ComingSoonPage() {
         {/* LOGO HEADER */}
         <header className="flex flex-col items-center gap-3">
           <div
-            className="relative rounded-2xl overflow-hidden shrink-0"
+            className="relative rounded-3xl overflow-hidden shrink-0"
             style={{
-              width: "96px",
-              height: "96px",
-              border: "2px solid rgba(255,255,255,0.40)",
-              boxShadow:
-                "0 0 0 1px rgba(255,255,255,0.10), 0 0 40px rgba(255,255,255,0.18), 0 0 80px rgba(255,255,255,0.06), 0 12px 40px rgba(0,0,0,0.70)",
+              width: "120px",
+              height: "120px",
+              background: "#ffffff",
+              boxShadow: "0 8px 32px rgba(0,0,0,0.50), 0 2px 8px rgba(0,0,0,0.30)",
             }}
           >
             <Image
-              src="/logo-mark.png"
+              src="/debranded-icon.png"
               alt="DEBRANDED logo"
-              width={96}
-              height={96}
-              className="object-cover w-full h-full"
+              width={120}
+              height={120}
+              className="object-contain w-full h-full p-2"
               priority
             />
           </div>
